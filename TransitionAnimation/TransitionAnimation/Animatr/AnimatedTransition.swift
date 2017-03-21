@@ -121,7 +121,7 @@ class AnimatedTransition: NSObject,UIViewControllerAnimatedTransitioning {
         }else{
             //判断toVC的,只有在不是.custom的时候才能添加
             if self.modalPresentationStyle != .custom{
-                containerView.addSubview(toView)
+                containerView.addSubview(fromView)
             }
             self.dismissAnimationCallBack?(toVC,toView,fromVC,fromView)
         }
