@@ -33,6 +33,9 @@ class Animatr: NSObject,UIViewControllerTransitioningDelegate {
     var dismissDuration: TimeInterval = 0.0
     /// * presentDuration: present动画预估时长
     var presentDuration: TimeInterval = 0.0
+    
+    
+    //MARK: ------------------ 在动画执行完成后一定要把它设置成yes ---------------
     /// * 动画是否已经完成
     var isAccomplish: Bool {
         get{
@@ -46,13 +49,14 @@ class Animatr: NSObject,UIViewControllerTransitioningDelegate {
     }
     
     
-    //MARK: -------------------- 对外保露方法 ----------------------
+    //MARK: -------------------- 对外暴露的containerView ----------------------
     ///可以拿到容器视图
     /// * containerView: 容器视图，里面储存了toView与fromeView
     /// * 可以用作蒙版（默认透明）
     func containerViewCallBackFunc(containerViewCallBack: @escaping (UIView)->()) -> () {
         self.containerViewCallBack = containerViewCallBack
     }
+    
     
     //MARK: -------------------- 动画接口 -------------------------
     /// * presentAnimationCallBack: 可以在里面写present转场动画
